@@ -21,11 +21,11 @@
 
 2つ目。
 
-    rosrun image_view image_view image:=/usb_cam/image_raw
-
-3つ目。
-
     rosrun usb_cam usb_cam_node
+
+3つ目。これはUSBカメラがそもそもちゃんと動くかどうかの確認用なので動かさなくても良い。
+
+    rosrun image_view image_view image:=/usb_cam/image_raw
 
 `darkned_ros/config/ros.yaml`の`topic:`のところを`topic: /usb_cam/image_raw`とする。
 4つ目のターミナルでdarknet_rosを立ち上げる。
