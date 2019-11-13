@@ -1,5 +1,37 @@
 # YOLO ROS: Real-Time Object Detection for ROS
 
+## 使い方 by 中沢研究室
+
+### Kinect v2モード
+
+１つ目のターミナルでkinectを立ち上げる。
+
+    roslaunch kinect2_bridge kinect2_bridge.launch
+
+`darkned_ros/config/ros.yaml`の`topic:`のところを`topic: /kinect2/hd/image_color`とする。
+2つ目のターミナルでdarknet_rosを立ち上げる。
+
+    roslaunch darknet_ros darknet_ros.launch
+
+### USBカメラモード
+
+１つ目。
+
+    roscore
+
+2つ目。
+
+    rosrun image_view image_view image:=/usb_cam/image_raw
+
+3つ目。
+
+    rosrun usb_cam usb_cam_node
+
+`darkned_ros/config/ros.yaml`の`topic:`のところを`topic: /usb_cam/image_raw`とする。
+4つ目のターミナルでdarknet_rosを立ち上げる。
+
+    roslaunch darknet_ros darknet_ros.launch
+
 ## Overview
 
 This is a ROS package developed for object detection in camera images. You only look once (YOLO) is a state-of-the-art, real-time object detection system. In the following ROS package you are able to use YOLO (V3) on GPU and CPU. The pre-trained model of the convolutional neural network is able to detect pre-trained classes including the data set from VOC and COCO, or you can also create a network with your own detection objects. For more information about YOLO, Darknet, available training data and training YOLO see the following link: [YOLO: Real-Time Object Detection](http://pjreddie.com/darknet/yolo/).
