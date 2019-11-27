@@ -1,7 +1,7 @@
 subscribers:
 
   camera_reading:
-    topic: /usb_cam/image_raw
+    topic: /kinect2/hd/image_color
     queue_size: 1
 
 actions:

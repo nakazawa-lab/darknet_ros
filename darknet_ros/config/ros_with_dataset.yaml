@@ -1,7 +1,7 @@
 subscribers:
 
   camera_reading:
-    topic: /usb_cam/image_raw
+    topic: /moviedata_py
     queue_size: 1
 
 actions:
